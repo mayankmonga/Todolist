@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #1f2620;
+  --ink-soft: #5b645c;
+  --paper: #f6f3ec;
+  --card: #ffffff;
+  --line: #e3ded2;
+  --moss: #5c7a5e;
+  --moss-dark: #3f5a41;
+  --moss-pale: #e7eee3;
+  --clay: #c1694a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  padding: 64px 24px;
+}
+
+.main {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 40px 36px 36px;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+#tasknum {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.input-area input {
+  flex: 1;
+  height: 44px;
+  width: auto;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: var(--moss);
+  background: var(--card);
+}
+
+.input-area input::placeholder {
+  color: #a8a193;
+}
+
+#addbtn {
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--moss-dark);
+  color: #f3f7f1;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#addbtn:hover {
+  background: var(--moss);
+}
+
+#tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  background: var(--paper);
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease;
+}
+
+.task-row.completed {
+  background: var(--moss-pale);
+}
+
+.task-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--moss-dark);
+  cursor: pointer;
+}
+
+.task-row span {
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.task-row.completed span {
+  color: var(--ink-soft);
+}
+
+.task-row button {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.task-row button:hover {
+  background: #fbe8e2;
+  color: var(--clay);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px 0 8px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
